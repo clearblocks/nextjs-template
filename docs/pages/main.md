@@ -62,6 +62,7 @@ Contains a header 'Contact'
 
 Contains a contact form with:
 
+- A WhatsApp link
 - A Phonenumber
 - An address with a google maps icon. Clicking on the icon will open the address in Google Maps
 - A Form with FormFields for name and email and a TextAreaField for message and a 'Send' submit button

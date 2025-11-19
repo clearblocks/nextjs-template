@@ -1,22 +1,27 @@
 "use client";
 
-import Image from "next/image";
-
 import { useTranslations } from "next-intl";
 
-import { LanguageSwitcher } from "@/components/molecules";
-import { ContactForm, PricingTable, ServiceCard } from "@/components/organisms";
+import {
+  ContactSection,
+  Footer,
+  Header,
+  HeroSection,
+  ImageGallery,
+  MethodSection,
+  PricingSection,
+  SectionHeader,
+  ServiceCard,
+  TextSection,
+  WhatsAppCTA,
+} from "@/components/organisms";
 
 export default function Home(): React.ReactElement {
-  const tHeader = useTranslations("header");
-  const tHero = useTranslations("hero");
   const tServices = useTranslations("services");
-  const tWhatsapp = useTranslations("whatsappCta");
   const tAbout = useTranslations("about");
   const tMethod = useTranslations("method");
   const tContact = useTranslations("contact");
   const tPricing = useTranslations("pricing");
-  const tFooter = useTranslations("footer");
 
   // Pricing data from Figma
   const washingItems = [
@@ -64,48 +69,9 @@ export default function Home(): React.ReactElement {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Header */}
-      <header className="bg-[#ffc9e1] px-1 py-2 flex justify-end items-center">
-        <div className="flex items-center gap-4 mr-auto ml-4">
-          <div className="relative w-[41px] h-[49px]">
-            <Image
-              src="/images/logo.png"
-              alt="Irongirl Logo"
-              fill
-              className="rounded-[50px] object-cover"
-            />
-          </div>
-          <span className="font-family-hero text-[24px] text-primary absolute ml-10 mt-5">
-            {tHeader("logoText")}
-          </span>
-        </div>
-        <LanguageSwitcher />
-      </header>
+      <Header />
 
-      {/* Hero */}
-      <section className="relative w-full aspect-[440/180] overflow-hidden">
-        <Image
-          src="/images/hero-bg.png"
-          alt="Hero background"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 flex flex-col items-start justify-center gap-2 text-white pl-5">
-          <div className="font-family-hero text-base leading-tight">
-            <p className="mb-0">{tHero("line1")}</p>
-            <p>{tHero("line2")}</p>
-          </div>
-          <div className="font-family-hero text-base leading-tight">
-            <p className="mb-0">{tHero("line3")}</p>
-            <p className="mb-0">{tHero("line4")}</p>
-            <p>{tHero("line5")}</p>
-          </div>
-          <div className="font-family-hero text-xs leading-tight">
-            <p className="mb-0">{tHero("phoneLabel")}</p>
-            <p>{tHero("phoneNumber")}</p>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Services */}
       <section id="services" className="py-6 px-5 flex flex-wrap gap-6 justify-center">
@@ -159,266 +125,75 @@ export default function Home(): React.ReactElement {
         />
       </section>
 
-      {/* WhatsApp CTA */}
-      <section className="relative w-full aspect-[440/310] overflow-hidden">
-        <Image
-          src="/images/whatsapp-cta-bg.jpg"
-          alt="WhatsApp CTA background"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 flex flex-col items-start justify-start p-5 gap-4">
-          <p className="font-family-sans font-medium text-2xl text-white">
-            {tWhatsapp("title")}
-          </p>
-          <a
-            href={`https://wa.me/${tWhatsapp("phoneNumber").replace(/[^0-9]/g, "")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity"
-          >
-            <span className="font-family-sans font-bold text-2xl">{tWhatsapp("buttonLabel")}</span>
-            <div className="relative w-8 h-8">
-              <Image
-                src="/images/whatsapp-green-icon.png"
-                alt="WhatsApp"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </a>
-        </div>
-      </section>
+      <WhatsAppCTA />
 
-      {/* About Header */}
-      <section
-        id="about"
-        className="bg-[#f2ebeb] h-[120px] flex items-center justify-center px-4 shadow-[0px_4px_4px_0px_inset_rgba(0,0,0,0.25)]"
-      >
-        <h2 className="font-family-header text-2xl text-black">{tAbout("header")}</h2>
-      </section>
+      <SectionHeader title={tAbout("header")} id="about" hasShadow />
 
-      {/* About Text */}
-      <section className="px-5 py-6 flex flex-col gap-0">
-        <div className="font-family-sans text-base text-black leading-normal">
-          <p className="mb-0">{tAbout("intro1")}</p>
-          <p className="mb-0 text-base">&nbsp;</p>
-          <p className="mb-0">{tAbout("intro2")}</p>
-          <p className="mb-0 text-base">&nbsp;</p>
-          <p className="mb-0">{tAbout("intro3")}</p>
-          <p className="mb-0 text-base">&nbsp;</p>
-          <p className="mb-0">{tAbout("intro4")}</p>
-          <p className="mb-0 text-base">&nbsp;</p>
-          <p className="mb-0">{tAbout("intro5")}</p>
-          <p className="mb-0 text-base">&nbsp;</p>
-          <p>{tAbout("intro6")}</p>
-        </div>
-      </section>
+      <TextSection
+        paragraphs={[
+          tAbout("intro1"),
+          tAbout("intro2"),
+          tAbout("intro3"),
+          tAbout("intro4"),
+          tAbout("intro5"),
+          tAbout("intro6"),
+        ]}
+      />
 
-      {/* Images 1-2 */}
-      <section className="px-5">
-        <div className="relative w-full aspect-[400/203]">
-          <Image src="/images/ironing-board-pink.jpg" alt="Service" fill className="object-cover" />
-        </div>
-        <div className="relative w-full aspect-[400/281]">
-          <Image src="/images/image-2.png" alt="Service" fill className="object-cover" />
-        </div>
-      </section>
+      <ImageGallery
+        className="px-5"
+        images={[
+          { src: "/images/ironing-board-pink.jpg", alt: "Service", aspectRatio: "aspect-[400/203]" },
+          { src: "/images/image-2.png", alt: "Service", aspectRatio: "aspect-[400/281]" },
+        ]}
+      />
 
-      {/* Method Header */}
-      <section
-        id="method"
-        className="bg-[#f2ebeb] h-[120px] flex flex-col items-center justify-center px-4"
-      >
-        <h2 className="font-family-sans text-[26px] text-black leading-normal">{tMethod("header")}</h2>
-      </section>
+      <SectionHeader title={tMethod("header")} id="method" />
 
-      {/* Method Text */}
-      <section className="px-5 py-5 flex flex-col gap-2 text-black">
-        <ul className="font-family-sans text-base leading-[30px] list-disc pl-6">
-          {Array.from({ length: 7 }).map((_, i) => (
-            <li key={i}>{tMethod(`steps.${i}`)}</li>
-          ))}
-        </ul>
+      <MethodSection />
 
-        <h3 className="font-family-sans font-medium text-[26px] mt-4">{tMethod("washingTitle")}</h3>
-        <ul className="font-family-sans text-base leading-[30px] list-disc pl-6">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <li key={i}>{tMethod(`washingSteps.${i}`)}</li>
-          ))}
-        </ul>
+      <ImageGallery
+        images={[
+          { src: "/images/woman-steam-shirt.jpg", alt: "Service", width: 800, height: 400 },
+          { src: "/images/image-4.png", alt: "Service", width: 800, height: 400 },
+          { src: "/images/image-5.png", alt: "Service", width: 800, height: 400 },
+        ]}
+      />
 
-        <h3 className="font-family-sans font-medium text-[26px] mt-4">{tMethod("ironingTitle")}</h3>
-        <ul className="font-family-sans text-base leading-[30px] list-disc pl-6">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <li key={i}>{tMethod(`ironingSteps.${i}`)}</li>
-          ))}
-        </ul>
-      </section>
+      <SectionHeader title={tContact("header")} id="contact" />
 
-      {/* Images 3-5 */}
-      <section className="flex flex-col">
-        <Image
-          src="/images/woman-steam-shirt.jpg"
-          alt="Service"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-        />
-        <Image
-          src="/images/image-4.png"
-          alt="Service"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-        />
-        <Image
-          src="/images/image-5.png"
-          alt="Service"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-        />
-      </section>
+      <ContactSection />
 
-      {/* Contact Header */}
-      <section
-        id="contact"
-        className="bg-[#f2ebeb] h-[120px] flex flex-col items-center justify-center px-4"
-      >
-        <h2 className="font-family-sans text-[26px] text-black leading-normal">{tContact("header")}</h2>
-      </section>
+      <ImageGallery
+        images={[
+          { src: "/images/image-6.png", alt: "Service", width: 800, height: 400 },
+          { src: "/images/steamer-pink-shirt-cropped.jpg", alt: "Service", width: 800, height: 400 },
+        ]}
+      />
 
-      {/* Contact Block */}
-      <section className="px-5 py-2 flex flex-col gap-4 items-center">
-        <div className="flex flex-col gap-4 w-full max-w-[400px]">
-          <p className="font-family-sans font-bold text-xl text-black">{tContact("callUs")}</p>
-
-          <div className="flex items-center gap-2">
-            <div className="relative w-[34px] h-[34px]">
-              <Image
-                src="/images/icon-contact.png"
-                alt="Phone"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="font-family-sans text-xl text-black">{tContact("phoneNumber")}</p>
-          </div>
-
-          <a
-            href={tContact("googleMapsUrl")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-          >
-            <div className="relative w-[35px] h-[35px]">
-              <Image
-                src="/images/google-maps-icon.png"
-                alt="Google Maps"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="font-family-sans text-xl text-black whitespace-pre-line">
-              {tContact("address")}
-            </p>
-          </a>
-
-          <p className="font-family-sans font-bold text-xl text-black mt-2">{tContact("formTitle")}</p>
-
-          <ContactForm />
-        </div>
-      </section>
-
-      {/* Images 6-7 */}
-      <section className="flex flex-col">
-        <Image
-          src="/images/image-6.png"
-          alt="Service"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-        />
-        <Image
-          src="/images/steamer-pink-shirt-cropped.jpg"
-          alt="Service"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-        />
-      </section>
-
-      {/* Pricing Header */}
-      <section
+      <SectionHeader
+        title={tPricing("header")}
+        subtitle={tPricing("paymentNote")}
         id="pricing"
-        className="bg-[#f2ebeb] h-[200px] flex flex-col items-center justify-center px-20 py-11 gap-4"
-      >
-        <h2 className="font-family-sans text-[26px] text-black leading-normal text-center">
-          {tPricing("header")}
-        </h2>
-        <p className="font-family-sans text-xl text-black text-center">{tPricing("paymentNote")}</p>
-      </section>
+        height="h-[200px]"
+        className="px-20 py-11 gap-4"
+      />
 
-      {/* Pricing Tables */}
-      <section className="px-10 py-5 flex flex-col gap-2 items-center">
-        <PricingTable title={tPricing("washing.title")} priceItems={washingItems} />
+      <PricingSection
+        washingItems={washingItems}
+        ironingAdultsItems={ironingAdultsItems}
+        ironingChildrenItems={ironingChildrenItems}
+        linensItems={linensItems}
+      />
 
-        <PricingTable
-          title={tPricing("ironingAdults.title")}
-          subtitle={tPricing("ironingAdults.subtitle")}
-          priceItems={ironingAdultsItems}
-        />
+      <ImageGallery
+        images={[
+          { src: "/images/image-8.png", alt: "Service", width: 800, height: 400 },
+          { src: "/images/image-9.png", alt: "Service", width: 800, height: 400 },
+        ]}
+      />
 
-        <PricingTable
-          subtitle={tPricing("ironingChildren.subtitle")}
-          priceItems={ironingChildrenItems}
-        />
-
-        <PricingTable subtitle={tPricing("linens.subtitle")} priceItems={linensItems} />
-      </section>
-
-      {/* Images 8-9 */}
-      <section className="flex flex-col">
-        <Image
-          src="/images/image-8.png"
-          alt="Service"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-        />
-        <Image
-          src="/images/image-9.png"
-          alt="Service"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-        />
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-[#f2ebeb] h-[150px] flex flex-col items-center justify-center px-2 py-5 gap-2">
-        <p className="font-family-sans text-base text-black text-center leading-[30px]">
-          {tFooter("copyright")}
-          <br />
-          {tFooter("address")}
-        </p>
-        <a
-          href={tFooter("googleMapsUrl")}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-80 transition-opacity"
-        >
-          <div className="relative w-[44px] h-[43px]">
-            <Image
-              src="/images/google-maps-icon.png"
-              alt="Google Maps"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
