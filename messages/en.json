@@ -87,6 +87,8 @@
   },
   "contact": {
     "header": "Contact",
+    "whatsappText": "WhatsApp us",
+    "whatsappUrl": "https://wa.me/31633401173",
     "callUs": "Call us",
     "phoneNumber": "06-33401173",
     "address": "Paddenstoelenlaan 15\n3451 PZ Vleuten",
