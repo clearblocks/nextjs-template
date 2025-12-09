@@ -1,47 +1,63 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
-import { routing } from "@/i18n/routing";
+const languages = {
+  nl: { src: "/images/dutch-flag.png", alt: "Nederlands" },
+  en: { src: "/images/british-flag.png", alt: "English" },
+};
+
+type LocaleCode = keyof typeof languages;
+
+function setLocaleCookie(locale: string): void {
+  document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; SameSite=Lax`;
+}
 
 export function LanguageSwitcher(): React.ReactElement {
-  const t = useTranslations("common");
-  const locale = useLocale();
+  const locale = useLocale() as LocaleCode;
   const router = useRouter();
 
-  const handleLocaleChange = (newLocale: string): void => {
-    // Set cookie for locale preference using a function to avoid linting error
-    const setCookie = (name: string, value: string): void => {
-      document.cookie = `${name}=${value}; path=/; max-age=31536000; SameSite=Lax`;
-    };
+  const handleLocaleChange = (newLocale: LocaleCode): void => {
+    if (newLocale === locale) {
+      return;
+    }
 
-    setCookie("NEXT_LOCALE", newLocale);
-
-    // Refresh the page to apply new locale
+    setLocaleCookie(newLocale);
     router.refresh();
   };
 
+  const locales: LocaleCode[] = ["nl", "en"];
+
   return (
-    <div className="flex items-center gap-2">
-      <span className="font-family-sans text-sm text-foreground mr-2">{t("language")}:</span>
-      {routing.locales.map((loc) => (
-        <button
-          key={loc}
-          onClick={() => {
-            handleLocaleChange(loc);
-          }}
-          className={`px-3 py-1 rounded font-family-sans text-sm transition-colors ${
-            locale === loc
-              ? "bg-primary text-white"
-              : "bg-gray-200 text-foreground hover:bg-gray-300"
-          }`}
-          aria-label={`Switch to ${loc === "nl" ? t("dutch") : t("english")}`}
-        >
-          {loc.toUpperCase()}
-        </button>
-      ))}
+    <div className="flex items-center gap-2 bg-white rounded-lg p-1.5">
+      {locales.map((code) => {
+        const lang = languages[code];
+        const isActive = code === locale;
+
+        return (
+          <button
+            key={code}
+            type="button"
+            onClick={() => {
+              handleLocaleChange(code);
+            }}
+            className={`transition-all ${isActive ? "" : "grayscale hover:grayscale-50 cursor-pointer"}`}
+            aria-label={`Switch to ${lang.alt}`}
+            aria-pressed={isActive}
+          >
+            <Image
+              src={lang.src}
+              alt={lang.alt}
+              width={20}
+              height={14}
+              className="rounded-sm"
+            />
+          </button>
+        );
+      })}
     </div>
   );
 }

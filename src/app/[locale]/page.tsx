@@ -84,7 +84,7 @@ export default function Home(): React.ReactElement {
           description={tServices("washing.description")}
           buttonLabel={tServices("washing.buttonLabel")}
           onClick={() => {
-            scrollToSection("about");
+            scrollToSection("method");
           }}
         />
         <ServiceCard
