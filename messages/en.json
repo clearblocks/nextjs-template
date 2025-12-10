@@ -120,42 +120,64 @@
         { "name": "Each extra kg", "price": "€2.50" }
       ]
     },
-    "ironingAdults": {
+    "ironing": {
       "title": "Ironing",
-      "subtitle": "Women's and men's clothing",
-      "items": [
-        { "name": "Shirt", "price": "€1.80" },
-        { "name": "Blouse", "price": "€1.80" },
-        { "name": "Blouse or short-sleeved shirt", "price": "€1.80" },
-        { "name": "Blazer", "price": "€1.80" },
-        { "name": "Vest", "price": "€1.80" },
-        { "name": "Skirt", "price": "€1.80" },
-        { "name": "Shorts", "price": "€1.80" }
-      ]
-    },
-    "ironingChildren": {
-      "subtitle": "Children's clothing up to size 158",
-      "items": [
-        { "name": "Shirt", "price": "€1.80" },
-        { "name": "Blouse", "price": "€1.80" },
-        { "name": "Blouse or short-sleeved shirt", "price": "€1.80" },
-        { "name": "Blazer", "price": "€1.80" },
-        { "name": "Vest", "price": "€1.80" },
-        { "name": "Skirt", "price": "€1.80" },
-        { "name": "Shorts", "price": "€1.80" }
-      ]
-    },
-    "linens": {
-      "subtitle": "Linens and bedding",
-      "items": [
-        { "name": "Single sheet", "price": "€2.20" },
-        { "name": "Double sheet", "price": "€3.00" },
-        { "name": "Single duvet cover", "price": "€2.50" },
-        { "name": "Double duvet cover", "price": "€3.70" },
-        { "name": "Pillowcase", "price": "€1.00" },
-        { "name": "Tablecloth", "price": "€3.00" },
-        { "name": "Table runner", "price": "€1.10" }
-      ]
+      "adults": {
+        "title": "Women's and men's clothing",
+        "items": {
+          "shirt": "Shirt",
+          "blouse": "Blouse",
+          "shirt-short": "Short-sleeve blouse or shirt",
+          "colbert": "Blazer",
+          "denim": "Denim shirt",
+          "gilet": "Vest",
+          "pants": "Trousers",
+          "jumpsuit": "Jumpsuit",
+          "dress": "Dress",
+          "skirt": "Skirt",
+          "long-blouse": "Long blouse",
+          "top": "Top",
+          "jeans": "Jeans",
+          "sweater": "Sweater",
+          "vest": "Cardigan",
+          "shorts": "Shorts",
+          "polo": "Polo shirt",
+          "t-shirt": "T-shirt",
+          "body": "Bodysuit",
+          "boxer": "Boxer short",
+          "undershirt": "Undershirt"
+        }
+      },
+      "children": {
+        "title": "Children's clothing up to size 158",
+        "items": {
+          "shirt": "Shirt",
+          "blouse": "Blouse",
+          "shirt-short": "Short-sleeve blouse or shirt",
+          "colbert": "Blazer",
+          "pants": "Trousers",
+          "shorts": "Shorts",
+          "sweater": "Sweater",
+          "jacket": "Jacket",
+          "dress": "Dress",
+          "skirt": "Skirt",
+          "t-shirt": "T-shirt",
+          "polo": "Polo shirt" 
+        }
+      },
+      "linens": {
+        "title": "Linens and bedding",
+        "items": {
+          "sheet-1": "Single bed sheet",
+          "sheet-2": "Double bed sheet",
+          "bed-1": "Single duvet",
+          "bed-2": "Double duvet",
+          "pillowcase": "Pillowcase",
+          "table-cloth-small": "Tablecloth (small, up to 4m²)",
+          "table-cloth-large": "Tablecloth (large, 4m² and up)",
+          "table-runner": "Table runner"
+        }
+      }
     }
   },
   "footer": {

@@ -2,10 +2,7 @@ import React from "react";
 
 import { PricingRow } from "../molecules/PricingRow";
 
-export interface PriceItem {
-  name: string;
-  price: number;
-}
+interface PriceItem { name: string, price: number }
 
 export interface PricingTableProps {
   /**
@@ -23,6 +20,8 @@ export interface PricingTableProps {
 }
 
 export const PricingTable: React.FC<PricingTableProps> = ({ title, subtitle, priceItems }) => {
+  console.log(priceItems);
+
   return (
     <div className="bg-primary-light rounded-[5px] px-[15px] py-5 flex flex-col gap-[18px] items-center overflow-hidden w-full">
       {title && <h3 className="text-2xl font-semibold text-primary font-family-sans shrink-0">{title}</h3>}

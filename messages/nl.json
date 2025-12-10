@@ -120,42 +120,71 @@
         { "name": "Elke extra kg", "price": "€2,50" }
       ]
     },
-    "ironingAdults": {
+    "laundry": {
+      "title": "Wassen",
+      "items": {
+        "laundry-6": "Tot 6 kg",
+        "laundry-extra": "Elke extra kg"
+      }
+    },
+    "ironing": {
       "title": "Strijken",
-      "subtitle": "Dames- en herenkleding",
-      "items": [
-        { "name": "Overhemd", "price": "€1,80" },
-        { "name": "Blouse", "price": "€1,80" },
-        { "name": "Blouse of overhemd korte mouwen", "price": "€1,80" },
-        { "name": "Colbert", "price": "€1,80" },
-        { "name": "Gilet", "price": "€1,80" },
-        { "name": "Rok", "price": "€1,80" },
-        { "name": "Korte broek", "price": "€1,80" }
-      ]
-    },
-    "ironingChildren": {
-      "subtitle": "Kinderkleding t/m maat 158",
-      "items": [
-        { "name": "Overhemd", "price": "€1,80" },
-        { "name": "Blouse", "price": "€1,80" },
-        { "name": "Blouse of overhemd korte mouwen", "price": "€1,80" },
-        { "name": "Colbert", "price": "€1,80" },
-        { "name": "Gilet", "price": "€1,80" },
-        { "name": "Rok", "price": "€1,80" },
-        { "name": "Korte broek", "price": "€1,80" }
-      ]
-    },
-    "linens": {
-      "subtitle": "Linnen- en beddengoed",
-      "items": [
-        { "name": "Laken 1-persoons", "price": "€2,20" },
-        { "name": "Laken 2-persoons", "price": "€3,00" },
-        { "name": "Dekbed 1-persoons", "price": "€2,50" },
-        { "name": "Dekbed 2-persoons", "price": "€3,70" },
-        { "name": "Kussensloop", "price": "€1,00" },
-        { "name": "Tafellaken", "price": "€3,00" },
-        { "name": "Tafelloper", "price": "€1,10" }
-      ]
+      "adults": {
+        "title": "Dames- en herenkleding",
+        "items": {
+          "shirt": "Overhemd",
+          "blouse": "Blouse",
+          "shirt-short": "Blouse of overhemd korte mouwen",
+          "colbert": "Colbert",
+          "denim": "Denim overhemd",
+          "gilet": "Gilet",
+          "pants": "Pantalon",
+          "jumpsuit": "Jumpsuit",
+          "dress": "Jurk",
+          "skirt": "Rok",
+          "long-blouse": "Lange blouse",
+          "top": "Topje",
+          "jeans": "Spijkerbroek",
+          "sweater": "Trui",
+          "vest": "Vest",
+          "shorts": "Korte broek",
+          "polo": "Polo",
+          "t-shirt": "T-shirt",
+          "body": "Body",
+          "boxer": "Boxershort",
+          "undershirt": "Hemd"
+        }
+      },
+      "children": {
+        "title": "Kinderkleding t/m maat 158",
+        "items": {
+          "shirt": "Overhemd",
+          "blouse": "Blouse",
+          "shirt-short": "Blouse of overhemd korte mouwen",
+          "colbert": "Colbert",
+          "pants": "Lange broek",
+          "shorts": "Korte broek",
+          "sweater": "Trui",
+          "jacket": "Jas",
+          "dress": "Jurk",
+          "skirt": "Rok",
+          "t-shirt": "T-shirt",
+          "polo": "Polo" 
+        }
+      },
+      "linens": {
+        "title": "Linnen- en beddengoed",
+        "items": {
+          "sheet-1": "Laken 1-persoons",
+          "sheet-2": "Laken 2-persoons",
+          "bed-1": "Dekbed 1-persoons",
+          "bed-2": "Dekbed 2-persoons",
+          "pillowcase": "Kussensloop",
+          "table-cloth-small": "Tafellaken (klein, tot 4m²)",
+          "table-cloth-large": "Tafellaken (groot, vanaf 4m²)",
+          "table-runner": "Tafelloper"
+        }
+      }
     }
   },
   "footer": {

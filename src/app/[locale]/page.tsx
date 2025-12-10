@@ -23,42 +23,6 @@ export default function Home(): React.ReactElement {
   const tContact = useTranslations("contact");
   const tPricing = useTranslations("pricing");
 
-  // Pricing data from Figma
-  const washingItems = [
-    { name: tPricing("washing.items.0.name"), price: 16.5 },
-    { name: tPricing("washing.items.1.name"), price: 2.5 },
-  ];
-
-  const ironingAdultsItems = [
-    { name: tPricing("ironingAdults.items.0.name"), price: 1.8 },
-    { name: tPricing("ironingAdults.items.1.name"), price: 1.8 },
-    { name: tPricing("ironingAdults.items.2.name"), price: 1.8 },
-    { name: tPricing("ironingAdults.items.3.name"), price: 1.8 },
-    { name: tPricing("ironingAdults.items.4.name"), price: 1.8 },
-    { name: tPricing("ironingAdults.items.5.name"), price: 1.8 },
-    { name: tPricing("ironingAdults.items.6.name"), price: 1.8 },
-  ];
-
-  const ironingChildrenItems = [
-    { name: tPricing("ironingChildren.items.0.name"), price: 1.8 },
-    { name: tPricing("ironingChildren.items.1.name"), price: 1.8 },
-    { name: tPricing("ironingChildren.items.2.name"), price: 1.8 },
-    { name: tPricing("ironingChildren.items.3.name"), price: 1.8 },
-    { name: tPricing("ironingChildren.items.4.name"), price: 1.8 },
-    { name: tPricing("ironingChildren.items.5.name"), price: 1.8 },
-    { name: tPricing("ironingChildren.items.6.name"), price: 1.8 },
-  ];
-
-  const linensItems = [
-    { name: tPricing("linens.items.0.name"), price: 2.2 },
-    { name: tPricing("linens.items.1.name"), price: 3.0 },
-    { name: tPricing("linens.items.2.name"), price: 2.5 },
-    { name: tPricing("linens.items.3.name"), price: 3.7 },
-    { name: tPricing("linens.items.4.name"), price: 1.0 },
-    { name: tPricing("linens.items.5.name"), price: 3.0 },
-    { name: tPricing("linens.items.6.name"), price: 1.1 },
-  ];
-
   const scrollToSection = (id: string): void => {
     const element = document.getElementById(id);
 
@@ -179,12 +143,7 @@ export default function Home(): React.ReactElement {
         className="px-20 py-11 gap-4"
       />
 
-      <PricingSection
-        washingItems={washingItems}
-        ironingAdultsItems={ironingAdultsItems}
-        ironingChildrenItems={ironingChildrenItems}
-        linensItems={linensItems}
-      />
+      <PricingSection />
 
       <ImageGallery
         images={[
