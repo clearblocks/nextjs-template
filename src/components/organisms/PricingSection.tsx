@@ -18,7 +18,7 @@ export function PricingSection(): React.ReactElement {
   const t = useTranslations("pricing");
 
   return (
-    <section className="px-10 py-5 flex flex-col gap-2 items-center">
+    <section className="px-10 py-5 flex flex-col gap-2 items-center max-w-md md:max-w-lg mx-auto">
       <PricingTable 
         title={t("laundry.title")}
         priceItems={Object.entries(typedLaundryPriceData).map(([key, price]) => ({ name: t(`laundry.items.${key}`), price }))}

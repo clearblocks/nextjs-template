@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useTranslations } from "next-intl";
 
 import {
@@ -38,7 +40,7 @@ export default function Home(): React.ReactElement {
       <HeroSection />
 
       {/* Services */}
-      <section id="services" className="py-6 px-5 flex flex-wrap gap-6 justify-center">
+      <section id="services" className="py-6 px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center max-w-7xl mx-auto">
         <ServiceCard
           title={tServices("washing.title")}
           iconSrc="/images/icon-washing.png"
@@ -93,28 +95,63 @@ export default function Home(): React.ReactElement {
 
       <SectionHeader title={tAbout("header")} id="about" hasShadow />
 
-      <TextSection
-        paragraphs={[
-          tAbout("intro1"),
-          tAbout("intro2"),
-          tAbout("intro3"),
-          tAbout("intro4"),
-          tAbout("intro5"),
-          tAbout("intro6"),
-        ]}
-      />
+      {/* Mobile: stacked layout */}
+      <div className="md:hidden">
+        <TextSection
+          paragraphs={[
+            tAbout("intro1"),
+            tAbout("intro2"),
+            tAbout("intro3"),
+            tAbout("intro4"),
+            tAbout("intro5"),
+            tAbout("intro6"),
+          ]}
+        />
 
-      <ImageGallery
-        className="px-5"
-        images={[
-          { src: "/images/ironing-board-pink.jpg", alt: "Service", aspectRatio: "aspect-[400/203]" },
-          { src: "/images/image-2.png", alt: "Service", aspectRatio: "aspect-[400/281]" },
-        ]}
-      />
+        <ImageGallery
+          className="px-5"
+          images={[
+            { src: "/images/ironing-board-pink.jpg", alt: "Service", aspectRatio: "aspect-[400/203]" },
+            { src: "/images/image-2.png", alt: "Service", aspectRatio: "aspect-[400/281]" },
+          ]}
+        />
 
-      <SectionHeader title={tMethod("header")} id="method" />
+        <SectionHeader title={tMethod("header")} id="method" />
 
-      <MethodSection />
+        <MethodSection />
+      </div>
+
+      {/* Desktop: two-column layout */}
+      <div className="hidden md:grid md:grid-cols-2 gap-8 px-8 lg:px-16 py-6 max-w-7xl mx-auto">
+        {/* Left column: intro + images */}
+        <div className="flex flex-col gap-6">
+          <TextSection
+            className="px-0 py-0"
+            paragraphs={[
+              tAbout("intro1"),
+              tAbout("intro2"),
+              tAbout("intro3"),
+              tAbout("intro4"),
+              tAbout("intro5"),
+              tAbout("intro6"),
+            ]}
+          />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative aspect-[400/281]">
+              <Image src="/images/ironing-board-pink.jpg" alt="Service" fill className="object-cover rounded-lg" />
+            </div>
+            <div className="relative aspect-[400/281]">
+              <Image src="/images/image-2.png" alt="Service" fill className="object-cover rounded-lg" />
+            </div>
+          </div>
+        </div>
+
+        {/* Right column: method */}
+        <div id="method" className="flex flex-col gap-4">
+          <h2 className="font-family-sans font-bold text-2xl text-gray-800">{tMethod("header")}</h2>
+          <MethodSection />
+        </div>
+      </div>
 
       <ImageGallery
         images={[
