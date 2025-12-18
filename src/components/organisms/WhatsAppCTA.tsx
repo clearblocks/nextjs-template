@@ -22,10 +22,10 @@ export function WhatsAppCTA(): React.ReactElement {
           href={`https://wa.me/${t("phoneNumber").replace(/[^0-9]/g, "")}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 md:gap-5 text-white hover:opacity-80 transition-opacity"
+          className="flex items-center gap-3 md:gap-5 bg-primary-light/70 hover:bg-primary-light/85 rounded-2xl md:rounded-3xl px-4 py-2 md:px-6 md:py-3 transition-all"
         >
-          <span className="font-family-sans font-bold text-2xl md:text-4xl lg:text-5xl">{t("buttonLabel")}</span>
-          <div className="relative w-8 h-8 md:w-12 md:h-12 lg:w-14 lg:h-14">
+          <span className="font-family-sans font-bold text-xl md:text-4xl lg:text-5xl text-primary">{t("buttonLabel")}</span>
+          <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14">
             <Image
               src="/images/whatsapp-green-icon.png"
               alt="WhatsApp"
