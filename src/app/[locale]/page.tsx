@@ -18,6 +18,13 @@ import {
   WhatsAppCTA,
 } from "@/components/organisms";
 
+/*
+TODO:
+- Bigger logo
+- Smaller/less images 
+- wider priceTables
+*/
+
 export default function Home(): React.ReactElement {
   const tServices = useTranslations("services");
   const tAbout = useTranslations("about");
@@ -177,7 +184,7 @@ export default function Home(): React.ReactElement {
         subtitle={tPricing("paymentNote")}
         id="pricing"
         height="h-[200px]"
-        className="px-20 py-11 gap-4"
+        className="px-5 sm:px-20 py-11 gap-4"
       />
 
       <PricingSection />

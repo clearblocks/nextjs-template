@@ -46,7 +46,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${inter.variable} ${inriaSerif.variable} ${kaiseiTokumin.variable} antialiased`}
+        className={`${inter.variable} ${inriaSerif.variable} ${kaiseiTokumin.variable} antialiased overflow-x-hidden`}
       >
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
