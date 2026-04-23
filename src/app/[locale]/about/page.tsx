@@ -70,7 +70,7 @@ export default function AboutPage(): React.ReactElement {
       {/* Footer */}
       <footer className="bg-foreground text-white py-8">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="font-family-sans text-base">&copy; 2025 IronGirl. All rights reserved.</p>
+          <p className="font-family-sans text-base">&copy; 2026 Next.js template. All rights reserved.</p>
         </div>
       </footer>
     </div>

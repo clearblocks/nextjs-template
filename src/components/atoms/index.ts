@@ -10,5 +10,3 @@ export type { LabelProps } from "./Label";
 export { TextArea } from "./TextArea";
 export type { TextAreaProps } from "./TextArea";
 
-export { Icon } from "./Icon";
-export type { IconProps } from "./Icon";

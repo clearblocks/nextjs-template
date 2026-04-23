@@ -21,6 +21,10 @@ export interface TextAreaFieldProps {
    */
   errorMessage?: string;
   /**
+   * Helper text
+   */
+  helperText?: string;
+  /**
    * Disabled state
    */
   disabled?: boolean;
@@ -43,6 +47,7 @@ export const TextAreaField: React.FC<TextAreaFieldProps> = ({
   id,
   placeholder,
   errorMessage,
+  helperText,
   disabled = false,
   required = false,
   value,
@@ -51,7 +56,7 @@ export const TextAreaField: React.FC<TextAreaFieldProps> = ({
   const hasError = !!errorMessage;
 
   return (
-    <div className="flex flex-col gap-2 w-full">
+    <div className="w-full">
       <Label htmlFor={id} required={required}>
         {label}
       </Label>
@@ -65,7 +70,8 @@ export const TextAreaField: React.FC<TextAreaFieldProps> = ({
         value={value}
         onChange={onChange}
       />
-      {hasError && <p className="text-sm text-red-500 font-family-sans mt-1">{errorMessage}</p>}
+      {errorMessage && <p className="mt-1 text-sm text-red-500">{errorMessage}</p>}
+      {helperText && !errorMessage && <p className="mt-1 text-sm text-gray-500">{helperText}</p>}
     </div>
   );
 };

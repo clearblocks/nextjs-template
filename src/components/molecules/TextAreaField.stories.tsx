@@ -3,7 +3,7 @@ import { TextAreaField } from "./TextAreaField";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-  title: "Organisms/TextAreaField",
+  title: "Molecules/TextAreaField",
   component: TextAreaField,
   parameters: {
     layout: "padded",
@@ -21,6 +21,10 @@ const meta = {
     errorMessage: {
       control: "text",
       description: "Error message to display",
+    },
+    helperText: {
+      control: "text",
+      description: "Helper text to display",
     },
     disabled: {
       control: "boolean",
@@ -77,5 +81,14 @@ export const WithValue: Story = {
     id: "comments",
     value: "This is a pre-filled message in the textarea field.",
     placeholder: "Enter comments",
+  },
+};
+
+export const WithHelperText: Story = {
+  args: {
+    label: "Description",
+    id: "description",
+    placeholder: "Enter description...",
+    helperText: "Provide a detailed description of the item",
   },
 };

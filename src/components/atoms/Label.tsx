@@ -31,7 +31,7 @@ export const Label: React.FC<LabelProps> = ({
     large: "text-lg",
   };
 
-  const className = `font-family-sans font-medium text-foreground ${sizeStyles[size]} mb-1 block`;
+  const className = `font-medium text-gray-700 ${sizeStyles[size]} mb-1 block`;
 
   return (
     <label htmlFor={htmlFor} className={className}>

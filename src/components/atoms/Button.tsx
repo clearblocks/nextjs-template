@@ -31,11 +31,11 @@ export const Button: React.FC<ButtonProps> = ({
   className: additionalClassName = "",
 }) => {
   const baseStyles =
-    "font-family-sans font-medium text-xl text-white bg-primary rounded-[25px] px-[26px] py-0 h-[50px] flex items-center justify-center gap-[10px] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-[0px_4px_4px_0px_inset_rgba(0,0,0,0.25)]";
+    "font-medium text-base text-white bg-blue-600 rounded-lg px-4 py-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500";
 
   const disabledStyles = disabled
-    ? "cursor-not-allowed grayscale"
-    : "cursor-pointer hover:opacity-90";
+    ? "cursor-not-allowed opacity-50"
+    : "cursor-pointer hover:bg-blue-700";
 
   const className = `${baseStyles} ${disabledStyles} ${additionalClassName}`;
 

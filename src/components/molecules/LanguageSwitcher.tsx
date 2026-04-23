@@ -1,16 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { useLocale } from "next-intl";
 
-const languages = {
-  nl: { src: "/images/dutch-flag.png", alt: "Nederlands" },
-  en: { src: "/images/british-flag.png", alt: "English" },
-};
-
-type LocaleCode = keyof typeof languages;
+type LocaleCode = "nl" | "en";
 
 function setLocaleCookie(locale: string): void {
   document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; SameSite=Lax`;
@@ -32,9 +26,8 @@ export function LanguageSwitcher(): React.ReactElement {
   const locales: LocaleCode[] = ["nl", "en"];
 
   return (
-    <div className="flex items-center gap-2 bg-white rounded-lg p-1.5">
+    <div className="flex items-center gap-2 bg-white rounded-lg p-1.5 shadow-sm">
       {locales.map((code) => {
-        const lang = languages[code];
         const isActive = code === locale;
 
         return (
@@ -44,17 +37,13 @@ export function LanguageSwitcher(): React.ReactElement {
             onClick={() => {
               handleLocaleChange(code);
             }}
-            className={`transition-all ${isActive ? "" : "grayscale hover:grayscale-50 cursor-pointer"}`}
-            aria-label={`Switch to ${lang.alt}`}
-            aria-pressed={isActive}
+            className={`px-3 py-1 rounded transition-all ${
+              isActive
+                ? "bg-blue-600 text-white font-semibold"
+                : "text-gray-600 hover:bg-gray-100 cursor-pointer"
+            }`}
           >
-            <Image
-              src={lang.src}
-              alt={lang.alt}
-              width={20}
-              height={14}
-              className="rounded-sm"
-            />
+            {code.toUpperCase()}
           </button>
         );
       })}

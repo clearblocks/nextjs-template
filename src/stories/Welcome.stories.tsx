@@ -2,16 +2,18 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 const Welcome = (): React.ReactElement => {
   return (
-    <div className="p-8 max-w-4xl mx-auto font-family-sans">
-      <h1 className="text-4xl font-bold text-header mb-4">Welcome to Irongirl Component Library</h1>
+    <div className="p-8 max-w-4xl mx-auto">
+      <h1 className="text-4xl font-bold text-blue-900 mb-4">
+        Welcome to Next.js Template Component Library
+      </h1>
 
-      <p className="text-lg text-foreground mb-6">
-        This Storybook contains all reusable React components for the Irongirl Next.js application.
+      <p className="text-lg text-gray-700 mb-6">
+        This Storybook contains all reusable React components for the Next.js Template application.
       </p>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-header mb-3">Purpose</h2>
-        <ul className="list-disc list-inside space-y-2 text-foreground">
+        <h2 className="text-2xl font-semibold text-blue-800 mb-3">Purpose</h2>
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>
             <strong>Component Development:</strong> Build and test components in isolation
           </li>
@@ -31,31 +33,31 @@ const Welcome = (): React.ReactElement => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-header mb-3">Component Organization</h2>
-        <p className="text-foreground mb-3">
+        <h2 className="text-2xl font-semibold text-blue-800 mb-3">Component Organization</h2>
+        <p className="text-gray-700 mb-3">
           Components are organized using Atomic Design principles:
         </p>
 
         <div className="space-y-4">
-          <div className="p-4 bg-primary/10 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-2">Atoms</h3>
-            <p className="text-foreground">
+          <div className="p-4 bg-blue-50 rounded-lg">
+            <h3 className="text-xl font-semibold text-blue-700 mb-2">Atoms</h3>
+            <p className="text-gray-700">
               Basic building blocks that can&apos;t be broken down further: Buttons, Inputs, Labels,
               Icons
             </p>
           </div>
 
-          <div className="p-4 bg-header/10 rounded-lg">
-            <h3 className="text-xl font-semibold text-header mb-2">Molecules</h3>
-            <p className="text-foreground">
+          <div className="p-4 bg-blue-100 rounded-lg">
+            <h3 className="text-xl font-semibold text-blue-800 mb-2">Molecules</h3>
+            <p className="text-gray-700">
               Simple combinations of atoms functioning together: Form fields, Cards, Navigation
               items
             </p>
           </div>
 
-          <div className="p-4 bg-primary/10 rounded-lg">
-            <h3 className="text-xl font-semibold text-primary mb-2">Organisms</h3>
-            <p className="text-foreground">
+          <div className="p-4 bg-blue-50 rounded-lg">
+            <h3 className="text-xl font-semibold text-blue-700 mb-2">Organisms</h3>
+            <p className="text-gray-700">
               Complex components built from molecules and atoms: Forms, Navigation bars, Data tables
             </p>
           </div>
@@ -63,11 +65,11 @@ const Welcome = (): React.ReactElement => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-header mb-3">Getting Started</h2>
-        <p className="text-foreground mb-3">
+        <h2 className="text-2xl font-semibold text-blue-800 mb-3">Getting Started</h2>
+        <p className="text-gray-700 mb-3">
           Use the sidebar to navigate through available components. Each component has:
         </p>
-        <ul className="list-disc list-inside space-y-2 text-foreground">
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>Interactive controls to modify props</li>
           <li>Multiple stories showing different states</li>
           <li>TypeScript type definitions</li>
@@ -75,12 +77,12 @@ const Welcome = (): React.ReactElement => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-header mb-3">Using Components</h2>
-        <p className="text-foreground mb-3">
+        <h2 className="text-2xl font-semibold text-blue-800 mb-3">Using Components</h2>
+        <p className="text-gray-700 mb-3">
           All components can be imported from their respective folders:
         </p>
-        <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-          <code className="text-sm">
+        <pre className="bg-blue-50 p-4 rounded-lg overflow-x-auto">
+          <code className="text-sm text-gray-800">
             {`// Atoms
 import { Button, Input, Label } from '@/components/atoms';
 
@@ -94,34 +96,33 @@ import { LoginForm } from '@/components/organisms';`}
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-header mb-3">Design Tokens</h2>
-        <p className="text-foreground mb-3">
-          This project uses design tokens from Figma, accessible via Tailwind CSS:
+        <h2 className="text-2xl font-semibold text-blue-800 mb-3">Design Tokens</h2>
+        <p className="text-gray-700 mb-3">
+          This project uses design tokens accessible via Tailwind CSS:
         </p>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <h4 className="font-semibold text-foreground mb-2">Colors:</h4>
-            <ul className="list-disc list-inside text-sm text-foreground">
-              <li>primary</li>
-              <li>header</li>
-              <li>foreground</li>
-              <li>background</li>
+            <h4 className="font-semibold text-gray-800 mb-2">Colors:</h4>
+            <ul className="list-disc list-inside text-sm text-gray-700">
+              <li>Blue shades (50-900)</li>
+              <li>Gray shades (50-900)</li>
+              <li>Semantic colors (red, green, etc.)</li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-foreground mb-2">Typography:</h4>
-            <ul className="list-disc list-inside text-sm text-foreground">
-              <li>font-family-hero</li>
-              <li>font-family-header</li>
-              <li>font-family-sans</li>
+            <h4 className="font-semibold text-gray-800 mb-2">Typography:</h4>
+            <ul className="list-disc list-inside text-sm text-gray-700">
+              <li>System font stack</li>
+              <li>Responsive text sizes</li>
+              <li>Font weights (400-900)</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-header mb-3">Best Practices</h2>
-        <ol className="list-decimal list-inside space-y-2 text-foreground">
+        <h2 className="text-2xl font-semibold text-blue-800 mb-3">Best Practices</h2>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700">
           <li>Write TypeScript with proper types for all props</li>
           <li>Document props with JSDoc comments</li>
           <li>Create stories for all major states</li>
@@ -131,14 +132,14 @@ import { LoginForm } from '@/components/organisms';`}
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-header mb-3">Resources</h2>
-        <ul className="list-disc list-inside space-y-2 text-foreground">
+        <h2 className="text-2xl font-semibold text-blue-800 mb-3">Resources</h2>
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>
             <a
               href="https://storybook.js.org/docs"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-blue-600 hover:underline"
             >
               Storybook Documentation
             </a>
@@ -148,7 +149,7 @@ import { LoginForm } from '@/components/organisms';`}
               href="https://nextjs.org/docs"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-blue-600 hover:underline"
             >
               Next.js Documentation
             </a>
@@ -158,7 +159,7 @@ import { LoginForm } from '@/components/organisms';`}
               href="https://tailwindcss.com/docs"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-blue-600 hover:underline"
             >
               Tailwind CSS
             </a>
@@ -166,9 +167,9 @@ import { LoginForm } from '@/components/organisms';`}
         </ul>
       </section>
 
-      <div className="mt-8 p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
-        <p className="text-lg font-semibold text-primary">Happy coding! 🚀</p>
-        <p className="text-foreground mt-2">Start exploring components in the sidebar →</p>
+      <div className="mt-8 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-600">
+        <p className="text-lg font-semibold text-blue-700">Happy coding! 🚀</p>
+        <p className="text-gray-700 mt-2">Start exploring components in the sidebar →</p>
       </div>
     </div>
   );

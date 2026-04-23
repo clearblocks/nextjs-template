@@ -6,8 +6,5 @@ export type { CardProps } from "./Card";
 
 export { LanguageSwitcher } from "./LanguageSwitcher";
 
-export { PricingRow } from "./PricingRow";
-export type { PricingRowProps } from "./PricingRow";
-
 export { TextAreaField } from "./TextAreaField";
 export type { TextAreaFieldProps } from "./TextAreaField";

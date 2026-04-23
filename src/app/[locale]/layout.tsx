@@ -1,4 +1,4 @@
-import { Inter, Inria_Serif, Kaisei_Tokumin } from "next/font/google";
+import { Inter, Kaisei_Tokumin } from "next/font/google";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
@@ -7,22 +7,14 @@ import type { Metadata } from "next";
 
 import "../globals.css";
 
-// Base font - Inter
+// Base font - Inter - Replace if needed
 const inter = Inter({
   variable: "--font-family-base",
   subsets: ["latin"],
   display: "swap",
 });
 
-// Hero font - Inria Serif
-const inriaSerif = Inria_Serif({
-  variable: "--font-family-hero",
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-// Header font - Kaisei Tokumin
+// Header font - Kaisei Tokumin - Replace if needed
 const kaiseiTokumin = Kaisei_Tokumin({
   variable: "--font-family-header",
   weight: ["400", "500", "700", "800"],
@@ -46,7 +38,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${inter.variable} ${inriaSerif.variable} ${kaiseiTokumin.variable} antialiased overflow-x-hidden`}
+        className={`${inter.variable} ${kaiseiTokumin.variable} antialiased overflow-x-hidden`}
       >
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
